@@ -5,4 +5,4 @@
  * @author larrycornett
  *
  */
-package org.meerkat.services.rest;
+package org.meerkatgroup.services.soap;
