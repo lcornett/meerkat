@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.earlywarning.automation</groupId>
+  <artifactId>automation-framework</artifactId>
+  <name>Authentify-Cucumber-Tests</name>
+  <version>0.0.2-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>jira-rest-client</module>
+  	<module>authentication</module>
+  	<module>assembly</module>
+  </modules>
+  <properties>
+  	<java-version>1.8</java-version>
+  	<product-version>1.0.0</product-version>
+  </properties>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.logging.log4j</groupId>
+  		<artifactId>log4j-core</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.logging.log4j</groupId>
+  		<artifactId>log4j-api</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.mockito</groupId>
+  		<artifactId>mockito-core</artifactId>
+  	</dependency>
+  </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.apache.logging.log4j</groupId>
+  			<artifactId>log4j-core</artifactId>
+  			<version>2.8.2</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.logging.log4j</groupId>
+  			<artifactId>log4j-api</artifactId>
+  			<version>2.8.2</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.projectlombok</groupId>
+  			<artifactId>lombok</artifactId>
+  			<version>1.16.16</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+  			<version>4.12</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.mockito</groupId>
+  			<artifactId>mockito-core</artifactId>
+  			<version>2.8.9</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  <distributionManagement>
+		<repository>
+			<id>artifactory primary</id>
+			<name>artifactory primary-releases</name>
+			<url>https://artifactory.ews.int/artifactory/libs-release-local</url>
+
+		</repository>
+		<snapshotRepository>
+			<id>artifactory primary</id>
+			<name>artifactory primary-snapshots</name>
+			<url>https://artifactory.ews.int/artifactory/libs-snapshot-local</url>
+
+		</snapshotRepository>
+	</distributionManagement>  
+  <build>
+  	<pluginManagement>
+  	  <plugins>
+  	    <plugin>
+  	      <groupId>org.apache.maven.plugins</groupId>
+  	      <artifactId>maven-compiler-plugin</artifactId>
+  	      <configuration>
+  	        <source>${java-version}</source>
+  	        <target>${java-version}</target>
+  	      </configuration>
+  	    </plugin>
+  	  </plugins>
+  	</pluginManagement>
+  	<!--  plugins>
+  	  <plugin>
+		<artifactId>maven-assembly-plugin</artifactId>
+		<version>2.3</version>
+		<configuration>
+		  <descriptors>
+			<descriptor>src/assembly/assembly.xml</descriptor>
+		  </descriptors>
+		  <finalName>authentify-cucumber-tests</finalName>
+		  <appendAssemblyId>false</appendAssemblyId>
+		  </configuration>
+			 <executions>
+				<execution>
+				  <id>zip</id>
+					<goals>
+					  <goal>single</goal>
+					</goals>
+					<phase>package</phase>
+				</execution>
+			  </executions>
+	  </plugin> 
+	</plugins -->  	
+  </build>  
+  <organization>
+  	<name>Early Warning Services, L.L.C.</name>
+  	<url>https://www.earlywarning.com</url>
+  </organization>
+</project>
